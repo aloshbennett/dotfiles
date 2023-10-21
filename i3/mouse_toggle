@@ -1,0 +1,9 @@
+#!/bin/bash
+results=`xmodmap -pp | grep '  *1  *1' | wc -l`
+if (( $results == 1 )); then
+	xmodmap -e "pointer = 3 2 1"
+else
+	xmodmap -e "pointer = 1 2 3"
+fi
+
+exit 0

@@ -60,12 +60,12 @@ require("tokyonight").setup {
 require("onedark").setup {
     style = "dark"
 }
-vim.cmd("colorscheme tokyonight-night")
+vim.cmd("colorscheme onedark")
 
 -- Lualine
 require("lualine").setup {
     options = {
-        theme = "tokyonight"
+        theme = "onedark"
     }
 }
 -- Vim tpipeline
@@ -79,3 +79,4 @@ vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a T
 vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
 vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 vim.opt.termguicolors = true
+vim.opt.clipboard = 'unnamedplus'

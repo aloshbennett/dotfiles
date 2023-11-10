@@ -41,8 +41,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Custom script for monitor brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id /home/alosh/scripts/brightness.py UP
-bindsym XF86MonBrightnessDown exec --no-startup-id /home/alosh/scripts/brightness.py DOWN
+bindsym XF86MonBrightnessUp exec --no-startup-id /home/alosh/.config/i3/scripts/brightness.py UP
+bindsym XF86MonBrightnessDown exec --no-startup-id /home/alosh/.config/i3/scripts/brightness.py DOWN
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -278,8 +278,8 @@ exec feh --bg-scale '/home/alosh/Pictures/whale.jpg'
 
 for_window [class="PanGPUI"] floating enable
 for_window [class="Tilix"] floating enable
-bindsym $mod+c exec --no-startup-id tilix --geometry=66x34 -e '/home/alosh/scripts/cli_wrapper.sh cal  -y'
-bindsym $mod+Ctrl+f exec --no-startup-id tilix --geometry=66x34 -e '/home/alosh/scripts/cli_wrapper.sh fmenu -c'
+bindsym $mod+c exec --no-startup-id tilix --geometry=66x34 -e '/home/alosh/.config/i3/scripts/cli_wrapper.sh cal  -y'
+bindsym $mod+Ctrl+f exec --no-startup-id tilix --geometry=66x34 -e '/home/alosh/.config/i3/scripts/cli_wrapper.sh fmenu -c'
 
 
 # Key bindings for display switching

@@ -25,12 +25,12 @@ declare -a src=(
 
 declare -a dst=(
     "$HOME/.config/i3/i3blocks.conf"
-    "$HOME/.config/i3/brightness.py"
-    "$HOME/.config/i3/block"
-    "$HOME/.config/i3/i3_multi_conf"
-    "$HOME/.config/i3/mouse_toggle"
-    "$HOME/.config/i3/cli_wrapper.sh"
+    "$HOME/.config/i3/scripts/brightness.py"
+    "/dev/null/123"
     "$HOME/.config/i3/config"
+    "$HOME/.config/i3/scripts/mouse_toggle"
+    "$HOME/.config/i3/scripts/cli_wrapper.sh"
+    "/dev/null/123"
     "$HOME/.config/sway/config"
     "$HOME/.tmux.conf"
     "$HOME/.config/nvim/init.lua"

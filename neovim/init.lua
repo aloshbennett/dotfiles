@@ -81,3 +81,13 @@ vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
 vim.opt.termguicolors = true
 vim.opt.clipboard = 'unnamedplus'
 vim.keymap.set("i", "uu", "<ESC>", {silent = true})
+
+-- indenting using shifttab
+vim.keymap.set("i", "<S-Tab>", "<C-d>")
+
+-- remap navigation keys
+vim.keymap.set("n", "f", "<UP>", {silent = true})
+vim.keymap.set("n", "s", "<DOWN>", {silent = true})
+vim.keymap.set("n", "r", "<LEFT>", {silent = true})
+vim.keymap.set("n", "t", "<RIGHT>", {silent = true})
+

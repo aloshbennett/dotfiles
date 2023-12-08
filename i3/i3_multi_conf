@@ -51,12 +51,12 @@ floating_modifier $mod
 bindsym --whole-window button2 exec /home/alosh/.config/i3/mouse_toggle
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+b exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
-# start dmenu (a program launcher)
+# start dmenu (a ogram launcher)
 #bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -64,10 +64,10 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
+bindsym $mod+r focus left
+bindsym $mod+s focus down
+bindsym $mod+f focus up
+bindsym $mod+t focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -76,10 +76,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-#bindsym $mod+Shift+j move left
-#bindsym $mod+Shift+k move down
-#bindsym $mod+Shift+l move up
-#bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+r move left
+bindsym $mod+Shift+s move down
+bindsym $mod+Shift+f move up
+bindsym $mod+Shift+t move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -94,25 +94,25 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+m fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+n layout stacking
+bindsym $mod+e layout tabbed
+bindsym $mod+i layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+#bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
 
 # move focused workspace between monitors
-bindsym $mod+Ctrl+Right move workspace to output right
-bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+t move workspace to output right
+bindsym $mod+Ctrl+r move workspace to output left
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -166,9 +166,9 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+u reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+y restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -182,7 +182,7 @@ mode "exit: [l]ogout, [r]eboot, [s]hutdown, suspen[d]" {
 }
 bindsym $mod+Shift+e mode "exit: [l]ogout, [r]eboot, [s]hutdown, suspen[d]"
 
-bindsym $mod+Shift+l exec "i3lock -i /home/alosh/Pictures/lock.png -t"
+bindsym $mod+l exec "i3lock -i /home/alosh/Pictures/lock.png -t"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -192,10 +192,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym r resize shrink width 10 px or 10 ppt
+        bindsym s resize grow height 10 px or 10 ppt
+        bindsym f resize shrink height 10 px or 10 ppt
+        bindsym t resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -211,7 +211,7 @@ mode "resize" {
 
 ##
 # move floating windows with keys
-bindsym $mod+m mode "move" focus floating
+bindsym $mod+Shift+m mode "move" focus floating
 mode "move" {
     bindsym $mod+Tab focus right
 
@@ -230,7 +230,7 @@ mode "move" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+y mode "resize"
 
 set $bg-color 	         #2f2f2f
 set $border-color	 #dddddd
@@ -249,7 +249,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color     
 client.placeholder	$bg-color  	    $bg-color 		$inactive-text-color $bg-color		$bg-color
 
 
-bindsym $mod+d exec rofi -show drun -lines 10 -eh 2 -width 50 -padding 60 -opacity "65" 
+bindsym $mod+space exec rofi -show drun -lines 10 -eh 2 -width 50 -padding 60 -opacity "65" 
 
 bindsym $mod+Tab exec rofi -show 
 
@@ -284,25 +284,25 @@ bindsym $mod+Ctrl+f exec --no-startup-id tilix --geometry=66x34 -e '/home/alosh/
 
 # Key bindings for display switching
 # Laptop
-bindsym $mod+F1 exec autorandr -l laptop
+bindsym $mod+Ctrl+1 exec autorandr -l laptop
 # Office
-bindsym $mod+F2 exec autorandr -l dual
+bindsym $mod+Ctrl+2 exec autorandr -l dual
 # Home
-bindsym $mod+F3 exec autorandr -l home
+bindsym $mod+Ctrl+3 exec autorandr -l home
 
 # Keyboard layout
-bindsym $mod+Ctrl+F1 exec setxkbmap us
-bindsym $mod+Ctrl+F2 exec setxkbmap us -variant colemak_dh
+bindsym $mod+less exec setxkbmap us
+bindsym $mod+greater exec setxkbmap us -variant colemak_dh
 
 set $mouse_mode ""
 mode $mouse_mode {
 	# Mouse zoom
-	bindsym Ctrl+Up exec xdotool click 4
-	bindsym Ctrl+Down exec xdotool click 5
+	bindsym Ctrl+f exec xdotool click 4
+	bindsym Ctrl+s exec xdotool click 5
 
 	# Mouse scroll
-	bindsym Up exec xdotool click 4
-	bindsym Down exec xdotool click 5
+	bindsym f exec xdotool click 4
+	bindsym s exec xdotool click 5
     
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -310,7 +310,5 @@ mode $mouse_mode {
 }
 
 #Additional keys
-bindsym Ctrl+Home exec xdotool keyup Ctrl keyup Home key End
-bindsym Ctri+Del exec xdotool keyup Ctrl key Home key Home keydown Shift key Down keyup Shift key Del
 bindsym $mod+g mode $mouse_mode
 

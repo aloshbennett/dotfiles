@@ -1,0 +1,84 @@
+(defcfg
+  input  (device-file "/dev/input/by-id/usb-Logitech_USB_Keyboard-event-kbd")
+  output (uinput-sink "KMonad output")
+
+  fallthrough true
+)
+
+;; keyboard at the hardware level is still qwerty
+(defsrc
+  grv     1    2    3    4    5    6    7    8    9    0    -    =  bspc 
+  tab     q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps    a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft    z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl    lmet lalt           spc            ralt  rmet  rctl
+)
+
+(defalias
+  ext  (layer-toggle extend) ;; Bind 'ext' to the Extend Layer
+  sym  (layer-toggle symbols) ;; Bind 'sym' to Symbols Layer
+  num  (layer-toggle numbers) ;; Bind 'num' to Numbers Layer
+  nav  (layer-toggle navigation) ;; Bind 'nav' to Navigation Layer
+)
+
+(defalias
+  cpy C-c
+  pst C-v
+  cut C-x
+  udo C-z
+  all C-a
+  fnd C-f
+  bk Back
+  fw Forward
+  clft C-left
+  crgt C-right
+)
+
+
+(deflayer base 
+  _        _    _    _    _    _    _    _    _    _    _    _    _    caps
+  _        _    _    _    _    _    _    _    _    _    _    _    _    _
+  bspc     _    _    _    _    _    _    _    _    _    _    _    _ 
+  _        _    _    _    _    _    _    _    _    _    _    _ 
+  _        _    @num          _              @nav  @sym      lalt
+)
+
+(deflayer extend
+  _        f1   f2   f3   f4   f5   f6   f7   f8   f9  f10   f11  f12  ret
+  _        esc  @bk  @fnd @fw  ins  pgup home up   end  menu prnt slck _
+  _        @all tab  lsft lctl lalt pgdn lft  down rght del  caps _
+  _          @cut @cpy @pst @pst @udo pgdn bks  f13  f14  comp _
+  _        _    _              ret            _    _    _
+)
+
+(deflayer symbols
+  _        _    _    _    _    _    _    _    _    _    _    _    _    _
+  _        S-1  S-2  S-3  S-4  S-5  =    7    8    9    +    «    »    _
+  _        \_   [    {    \(   S-6  *    4    5    6    -    _    _
+  _        ]    }    \)   S-7  `    0    1    2    3    /    _
+  _        _    _              _               _    _    _
+)
+
+(deflayer numbers
+  XX        XX    XX    XX    XX    XX    XX    XX   XX   XX   XX    XX    XX    XX
+  XX        XX    XX    XX    XX    XX    XX    7    8    9    XX    XX    XX    XX
+  XX        XX    XX    XX    XX    XX    XX    4    5    6    XX    XX    XX
+  _         XX    XX    XX    XX    XX     0    1    2    3    XX    _
+  _        _    _              XX               _    _    _
+)
+
+(deflayer navigation
+  XX        XX    XX     XX     XX      XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX        XX    home   up     end     XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX        XX    left   down   right   XX    XX    @clft @crgt XX    XX    XX    XX
+  _         XX    pgup   pgdn   XX      XX    XX    XX    XX    XX    XX    _
+  _        _    _              XX               _    _    _
+)
+
+(deflayer empty
+  _        _    _    _    _    _    _    _    _    _    _    _    _    _
+  _        _    _    _    _    _    _    _    _    _    _    _    _    _
+  _        _    _    _    _    _    _    _    _    _    _    _    _
+  _        _    _    _    _    _    _    _    _    _    _    _
+  _        _    _              _              _    _    _
+)

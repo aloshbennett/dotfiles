@@ -17,8 +17,7 @@
 (defalias
   ext  (layer-toggle extend) ;; Bind 'ext' to the Extend Layer
   sym  (layer-toggle symbols) ;; Bind 'sym' to Symbols Layer
-  num  (layer-toggle numbers) ;; Bind 'num' to Numbers Layer
-  nav  (layer-toggle navigation) ;; Bind 'nav' to Navigation Layer
+  num_nav  (layer-toggle num_nav) ;; Bind 'num' to Numbers Layer
 )
 
 (defalias
@@ -40,7 +39,7 @@
   _        _    _    _    _    _    _    _    _    _    _    _    _    _
   bspc     _    _    _    _    _    _    _    _    _    _    _    _ 
   _        _    _    _    _    _    _    _    _    _    _    _ 
-  _        _    @num          _              @nav  @sym      lalt
+  _        _    @num_nav          _                _    @sym  lalt
 )
 
 (deflayer extend
@@ -59,11 +58,11 @@
   _        _    _              _               _    _    _
 )
 
-(deflayer numbers
+(deflayer num_nav
   XX        XX    XX    XX    XX    XX    XX    XX   XX   XX   XX    XX    XX    XX
-  XX        XX    XX    XX    XX    XX    XX    7    8    9    XX    XX    XX    XX
-  XX        XX    XX    XX    XX    XX    XX    4    5    6    XX    XX    XX
-  _         XX    XX    XX    XX    XX     0    1    2    3    XX    _
+  XX        XX    home  up    end   XX    XX    7    8    9    XX    XX    XX    XX
+  XX        XX    left  down  right XX    XX    4    5    6    XX    XX    XX
+  _         XX    pgup  pgdn  XX    XX     0    1    2    3    XX    _
   _        _    _              XX               _    _    _
 )
 

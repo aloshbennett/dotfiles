@@ -9,10 +9,10 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 # Home row direction keys, like vim
-set $left h
-set $down j
-set $up k
-set $right l
+set $left r
+set $down s
+set $up f
+set $right t
 
 # Your preferred terminal emulator
 set $term alacritty
@@ -69,13 +69,13 @@ set $menu wofi --show run
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+b exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -85,10 +85,9 @@ set $menu wofi --show run
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+r reload
+    bindsym $mod+Shift+y reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+x exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     mode "exit: [e]xit, [r]eboot, [s]hutdown, suspen[d]" {
       bindsym e exec swaymsg exit
       bindsym r exec systemctl reboot
@@ -97,7 +96,7 @@ set $menu wofi --show run
       bindsym Escape mode "default"
       bindsym Return mode "default"
     }
-    bindsym $mod+Shift+e mode "exit: [e]xit, [r]eboot, [s]hutdown, suspen[d]"
+    bindsym $mod+Shift+q mode "exit: [e]xit, [r]eboot, [s]hutdown, suspen[d]"
 
 #
 # Moving around:
@@ -170,22 +169,22 @@ set $menu wofi --show run
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    bindsym $mod+h splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+n layout stacking
+    bindsym $mod+e layout tabbed
+    bindsym $mod+i layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    bindsym $mod+o fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+m floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+m focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -224,7 +223,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+y mode "resize"
 
 # window colors
 set $bg-color		#2f2f2f

@@ -4,6 +4,7 @@ enum custom_layers {
   _QWERTY,
   _NAV,
   _SYM,
+  _GAME,
 };
 
 
@@ -34,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      _______, XXXXXXX,C(KC_LEFT),XXXXXXX,C(KC_RIGHT),XXXXXXX,_______,       XXXXXXX, KC_0,    KC_1,    KC_2,    KC_3,    XXXXXXX, _______,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, XXXXXXX, XXXXXXX,                    XXXXXXX,  XXXXXXX, XXXXXXX
+                                    _______, XXXXXXX, XXXXXXX,                    KC_0,  XXXXXXX, XXXXXXX
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
@@ -52,7 +53,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_SYM] = LAYOUT(
   //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     KC_TILDE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+     KC_TILDE, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            TG(_GAME), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
      XXXXXXX, KC_CIRC,  KC_HASH, KC_LPRN, KC_RPRN, XXXXXXX,                            XXXXXXX, KC_EQL,  KC_PIPE, KC_BSLS, KC_PERC, XXXXXXX,
   //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
@@ -62,6 +63,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                     _______, XXXXXXX, XXXXXXX,                    XXXXXXX,  XXXXXXX, XXXXXXX
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
- )
+ ),
+
+
+  [_GAME] = LAYOUT(
+  //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
+     KC_TILDE,  KC_F1,   KC_F2,    KC_F3,  KC_F4,  KC_F5,                             TG(_GAME),   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_ESC,
+  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+     XXXXXXX, XXXXXXX,  XXXXXXX,   KC_UP, XXXXXXX,  XXXXXXX,                           XXXXXXX, KC_7,    KC_8,    KC_9,    XXXXXXX, XXXXXXX,
+  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+     _______, XXXXXXX,  KC_LEFT, KC_DOWN,KC_RIGHT, XXXXXXX,                           XXXXXXX, KC_4,    KC_5,     KC_6,    XXXXXXX,  XXXXXXX,
+  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+     KC_LSFT, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,XXXXXXX,  KC_LALT,         XXXXXXX, KC_0,    KC_1,    KC_COMM, KC_DOT,   XXXXXXX, KC_RSFT,
+  //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
+                                    KC_RCTL, XXXXXXX, XXXXXXX,                   XXXXXXX,  XXXXXXX, XXXXXXX
+                                // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+  )
 };
 

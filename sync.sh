@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 
+# Write usage comment
 usage() {
     echo "Usage: sync.sh diff|pull|push"
 }
